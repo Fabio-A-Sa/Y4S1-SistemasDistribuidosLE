@@ -6,8 +6,8 @@ int main (void)
     void *context = zmq_ctx_new ();
     void *frontend = zmq_socket (context, ZMQ_ROUTER);
     void *backend  = zmq_socket (context, ZMQ_DEALER);
-    zmq_bind (frontend, "tcp://*:5559");
-    zmq_bind (backend,  "tcp://*:5560");
+    zmq_bind (frontend, "tcp://*:5570");
+    zmq_bind (backend,  "tcp://*:5571");
 
     //  Initialize poll set
     zmq_pollitem_t items [] = {

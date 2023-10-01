@@ -7,7 +7,7 @@ int main (void)
 
     //  Socket to talk to clients
     void *responder = zmq_socket (context, ZMQ_REP);
-    zmq_connect (responder, "tcp://localhost:5560");
+    zmq_connect (responder, "tcp://localhost:5571");
 
     while (1) {
         //  Wait for next request from client
