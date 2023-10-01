@@ -5,15 +5,17 @@ int main (void)
     //  Prepare our context and publisher
     void *context = zmq_ctx_new ();
     void *publisher = zmq_socket (context, ZMQ_PUB);
-    int rc = zmq_bind (publisher, "tcp://*:5556");
+    int rc = zmq_bind (publisher, "tcp://*:5514");
     assert (rc == 0);
+
+    printf("Sending PT data (+)\n");
 
     //  Initialize random number generator
     srandom ((unsigned) time (NULL));
     while (1) {
         //  Get values that will fool the boss
         int zipcode, temperature, relhumidity;
-        zipcode     = randof (100000);
+        zipcode     = randof (10000); // Only 4 digits
         temperature = randof (215) - 80;
         relhumidity = randof (50) + 10;
 
