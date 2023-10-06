@@ -1,21 +1,38 @@
 #include "zhelpers.h"
 
-int main (void)
+int main (int argc, char *argv[])
 {
+    if (argc != 3) {
+        printf("Usage: ./proxy <PUBLISHER_PORT> <SUBSCRIBER_PORT>\n");
+    }
+
+    // Publishers connection
+    char *port_publisher = argv[1];
+    char connection_publisher[21];
+    sprintf(connection_publisher, "tcp://*:%s", port_publisher);
+    printf("Publishers at '%s'\n", connection_publisher);
+
+    // Subscriber connection
+    char *port_subscriber = argv[2];
+    char connection_subscriber[21];
+    sprintf(connection_subscriber, "tcp://*:%s", port_subscriber);
+    printf("Subscribers at '%s'\n", connection_subscriber);
+
+    // Context
     void *context = zmq_ctx_new ();
 
-    //  This is where the weather server sits
-    void *frontend = zmq_socket (context, ZMQ_XSUB);
-    int r = zmq_bind (frontend, "tcp://localhost:5555");
-    printf("Connection 1: %d\n", r);
-
-    //  This is our public endpoint for subscribers
+    // Backend - publishers
     void *backend = zmq_socket (context, ZMQ_XPUB);
-    r = zmq_bind (backend, "tcp://localhost:5556");
-    printf("Connection 2: %d\n", r);
+    int r = zmq_bind (backend, connection_publisher);
+    assert(r == 0);
+
+    // Frontend - subscribers
+    void *frontend = zmq_socket (context, ZMQ_XSUB);
+    r = zmq_bind (frontend, connection_subscriber);
+    assert(r == 0);
 
     //  Run the proxy until the user interrupts us
-    zmq_proxy (frontend, backend, NULL);
+    zmq_proxy (backend, frontend, NULL);
     
     zmq_close (frontend);
     zmq_close (backend);
