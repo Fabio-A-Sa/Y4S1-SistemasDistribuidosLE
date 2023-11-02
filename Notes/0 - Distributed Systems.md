@@ -12,6 +12,9 @@ O que `TCP` garante é que a aplicação será notificada se não existir forma 
 
 TCP nem sempre retransmite mensagens que podem não ter sido entregues porque assim garante segurança nas operações indepotentes (como operação de débito ou compra). Operações indepotentes são aquelas que não alteram o estado normal do servidor quando são repetidas várias vezes (como uma operação de GET de uma página web).
 
+### RCP
 
+Remote Procedure Call serve para termos uma interface com servidores remotos:
 
-
+- `Client Stub`: 
+- `Server Stub`: 
