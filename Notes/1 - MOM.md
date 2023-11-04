@@ -28,3 +28,9 @@ Garante um comportamento at-most-once, pois a mensagem não precisa de sobrevive
 
 ## Topic Subscription
 
+A subscrição pode ser:
+
+- `Não partilhada`: 
+- `Partilhada`:
+- `Durável`:
+- `Não durável`:
