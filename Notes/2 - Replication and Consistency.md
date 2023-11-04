@@ -8,11 +8,12 @@ Modelo em que todas as réplicas conseguem executar e aplicar updates pela mesma
 
 ### Sequential Consistency Model
 
-
-
-### Serializability
-
-
+Uma execução é consistente a nível sequencial se for idêntica a uma execução das tarefas pelas várias threads do sistema. Não é composta, ou seja, não há garantias de consistência na ordem de manipulação de várias estruturas de dados.
 
 ### Linearizability
 
+Uma execução é linearizável se é sequencial consistent e se uma operação OP1 acontecer antes de uma operação OP2 sob o ponto de vista de um observador externo, então OP1 aparecerá antes de OP2. A linearização não é possível em arrays sem sincronização. Ao contrário da sequencialização, esta pode ser composta por várias estruturas de dados. 
+
+### Serializability
+
+Para sistemas baseados em transações. 
