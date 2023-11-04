@@ -16,4 +16,8 @@ Uma execução é linearizável se é sequencial consistent e se uma operação 
 
 ### Serializability
 
-Para sistemas baseados em transações. 
+Para sistemas baseados em transações. Uma execução é one-copy serializable se o resultado da execução for semelhante às execuções numa única cópia. São modelos semelhantes ao Sequential mas em que cada operação realizada por cada thread são explícitas em transactions.
+
+## Weak Consistency
+
+Os sistemas de consistência forte acabam por ser mais favoráveis em casos de réplicas, mas têm um impacto na escalabilidade, na performance e na disponibilidade. Num sistema comum, uma consistência fraca é suficiente.
