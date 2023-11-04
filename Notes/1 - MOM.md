@@ -30,7 +30,7 @@ Garante um comportamento at-most-once, pois a mensagem não precisa de sobrevive
 
 A subscrição pode ser:
 
-- `Não partilhada`: 
-- `Partilhada`:
-- `Durável`:
-- `Não durável`:
+- `Não partilhada`: só pode ter um único consumer ativo ao mesmo tempo;
+- `Partilhada`: pode ter vários consumers alinhados ao tópico;
+- `Durável`: uma vez criada existe até ser explicitamente eliminada;
+- `Não durável`: existe enquanto existe um consumer ativo, mas o tópico continua a existir;
