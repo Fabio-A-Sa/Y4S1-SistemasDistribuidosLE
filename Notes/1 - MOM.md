@@ -6,4 +6,13 @@
 
 - `Publisher-subscriber`: em vez de filas há tópicos, vários publishers colocam mensagens num certo tópico e os subscritores vão diretos àquele tópico. Assim, as mensagens podem ser enviadas por mais do que um processo.
 
-A JMS (Java Message System) providencia uma implementação blocking e non-blocking deste comportamento.
+A JMS (Java Message System) providencia uma implementação blocking e non-blocking deste comportamento. Tem dois modos de envio que proporcionam diferentes trade-offs entre reliability e performance:
+
+### Persistent
+
+Garante uma semântica once-and-only-once, ou seja, um crash no servidor não deve causar uma perda da mensagem enviada ou ser enviada em duplicado. Requer que se faça store à mensagem em modo não-volátil e requer que o cliente fique sincronizado com o JMS Server.
+
+### Non Persistent
+
+Garante um comportamento at-most-once, pois a mensagem não precisa de sobreviver a um server crash mas espera-se que tolere falhas normais da network.
+
