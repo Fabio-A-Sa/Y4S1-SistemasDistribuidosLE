@@ -18,4 +18,3 @@ Remote Procedure Call serve para termos uma interface com servidores remotos:
 
 - `Client Stub`: faz um *parameter marshalling* e bloqueia pela resposta se o RPC não for assíncrono. Depois faz *unmarshalling* da resposta;
 - `Server Stub`: determina os argumentos recebidos (*unmarshalling*) e chama a sua função interna. Depois envia o retorno pelo mesmo canal de comunicação;
-
