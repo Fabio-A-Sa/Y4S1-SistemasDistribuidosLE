@@ -9,4 +9,4 @@ As répicas só possuem propriedades de leitura e escrita. Como o output de uma 
 > NW - Número de réplicas de escrita <br>
 > N - Número total de ráplicas <br>
 
-Cada réplica do objecto tem um número de versão. 
+Cada réplica do objecto tem um número de versão. Mas isso não é suficiente pois pode haver falhas na partição e os valores ficarem diferentes entre ráplicas com o mesmo propósito (problema de concurrent writes). Podemos assegurar a consistência com `transactions`, onde 
