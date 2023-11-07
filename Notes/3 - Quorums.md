@@ -14,5 +14,11 @@ Cada réplica do objecto tem um número de versão. Mas isso não é suficiente 
 - a transaction também previne inconsistências devido a writes concurrentes;
 - mas a transaction tem problemas de *deadlocks* entre elas e de *blocking* se o coordinator falhar;
 
-### Dynamos Quorums
+### Dynamo Quorums
 
+- Um coordenador é um dos primeiros N servidores da lista de preferências para aquela chave;
+- Na operação put(key, value, context), o coordenador gera um vetor de versão para a nova versão e grava o novo valor localmente.
+- Em seguida, envia o par chave-valor e seu vetor de versão para os primeiros N servidores na lista de preferência da chave.
+- A operação put() é considerada bem-sucedida se pelo menos W-1 réplicas responderem.
+- Na operação get(key), o coordenador solicita todas as versões do par (chave, valor), incluindo os vetores de versão correspondentes, dos servidores restantes na lista de preferência.
+- Ao receber as respostas de pelo menos R-1 réplicas, o coordenador retorna todos os pares (chave, valor) cujos vetores de versão são máximos.
