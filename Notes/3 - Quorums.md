@@ -22,3 +22,16 @@ Cada réplica do objecto tem um número de versão. Mas isso não é suficiente 
 - A operação put() é considerada bem-sucedida se pelo menos W-1 réplicas responderem.
 - Na operação get(key), o coordenador solicita todas as versões do par (chave, valor), incluindo os vetores de versão correspondentes, dos servidores restantes na lista de preferência.
 - Ao receber as respostas de pelo menos R-1 réplicas, o coordenador retorna todos os pares (chave, valor) cujos vetores de versão são máximos.
+
+## Quorum Consensus
+
+Um quorum de uma operação é um conjunto de réplicas cuja cooperação é suficiente para executar a operação e é constuído por um quorum inicial e um quorum final. Há leitura a partir de um quorum inicial e escrita para um quorum final, ou seja, numa operação de leitura, o quorum final está vazio (porque só há escrita).
+
+As restrições de intercepção são definidas entre o o quorum final de uma operação e o quorum inicial da operação seguinte.
+
+### Gifford's RW Quorums
+
+Um ficheiro sujeito a operações read/write com as seguintes restrições:
+
+- Cada quorum final de escrita precisa interceptar cada quorum inicial de leitura
+- Cada quorum final de escrita precisa interpeptar cada quorim inicial de escrita
