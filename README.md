@@ -19,7 +19,11 @@ Notes that I take during theoretical lectures in Markdown. <br>
 
 ### Project (Grade: __/20)
 
-Soon
+
+
+#### Members
+
+
 
 **@ Fábio Araújo de Sá** <br>
 **2023/2024**
