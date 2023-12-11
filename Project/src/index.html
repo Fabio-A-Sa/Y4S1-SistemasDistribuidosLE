@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>BuyBuddy</title>
+    <script src="./js/script.js" defer></script>
+    <link rel="icon" href="logo.png">
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <p id="port" style="display: none;">{{PORT}}</p>
+    <header>
+        <div id="elements">
+            <div>
+                <button id="add-list">Create List</button>
+                <button id="join-list">Join List</button>
+            </div>
+            <img src="text_logo.png" alt="" id="header-logo">
+        </div>
+        <div class="horizontal-line"></div>
+    </header>
+    <div>
+        <h1 id="shopping-list-header">My Shopping Lists</h1>
+    </div>
+    <div id="modal" hidden>
+        <form id="new-list-form">
+            <h3>New Shopping List</h3>
+            <input type="text" class="list-name" name="shopping-list-name" id = "create-list-name">
+            <div id="modal-btns">
+                <button type="button" id="cancel-btn">Cancel</button>
+                <button type="submit" id="create-list-btn">Create List</button>
+            </div>
+        </form>
+    </div>
+    <div id="modal_join" hidden>
+        <form id="join-list-form">
+            <h3>Join Shopping List</h3>
+            <input type="text" class="list-name" name="shopping-list-name" id="join-list-name">
+            <div id="modal-btns">
+                <button type="button" id="cancel-join-btn">Cancel</button>
+                <button type="submit" id="join-list-btn">Join List</button>
+            </div>
+        </form>
+    </div>
+    <div id="thisShoppingList" hidden>
+        <form>
+        <ul id="this-list-items"></ul>
+        </form>
+    </div>
+    <div class="shopping-lists">
+    </div>  
+    
+</body>
+</html>

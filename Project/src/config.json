@@ -1,0 +1,11 @@
+{
+    "numServers": 4,
+    "servers": [5000, 5001, 5002, 5003],
+    "baseHost": 5000, 
+    "neighbors": 2,
+    "db_update": 5000, 
+    "client_cloud_update": 5000, 
+    "server_neighbor_update": 5000, 
+    "server_recovery": 5000
+}
+  

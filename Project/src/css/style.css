@@ -1,0 +1,336 @@
+html {
+    height: 100%;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background: rgb(232, 227, 217);
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2, h3, h4 {
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    display: block;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+header button:hover {
+    background-color: #fff4c7;
+}
+
+#header-logo {
+    max-height: 45px;
+    margin-right: 15px;
+}
+
+header #elements {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.horizontal-line {
+    width: 100%; /* Fills the entire width of the screen */
+    height: 2px;  /* You can adjust the height as needed */
+    background-color: #000; /* Change this to your desired line color */
+    margin-top: 10px;
+}
+
+#shopping-list-header {
+    text-align: center;
+    margin-top: 10px;
+    font-weight: normal;
+}
+
+.shopping-lists {
+    padding: 30px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+
+.shopping-list-item {
+    width: 295px;
+    height: fit-content;
+    padding-bottom: 30px;
+    margin: 20px;
+    color: #333;
+    background-color:none;
+    display: block;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    position: relative;
+    font-size: 13px;
+}
+
+.shopping-list-item h1 {
+    font-weight: lighter;
+
+}
+
+#div-title {
+    background-color: rgb(255, 255, 255);
+    padding: 10px;
+    padding-left: 20px;
+    text-align: center;
+    padding-right: 20px;
+    border-radius: 5px;
+    color: #333;
+    border: 1px solid rgb(84, 84, 84)
+
+}
+
+#div-info {
+    margin-top: 5px;
+    display: flex;
+    justify-content: space-between;
+}
+
+#timestamp {
+    text-align: right;
+    margin-right: 5px;
+}
+
+#delete-button {
+    text-align: left;
+    background: none;
+    border: none;
+}
+
+#div-title:hover {
+    cursor: pointer;
+}
+
+#divbtns {
+    display: flex;
+}
+
+#share-button {
+    margin-left: 5px;
+    background: none;
+    border: none;
+}
+
+#add-list, #join-list  {
+    width: 100px;
+    height: fit-content;
+    padding: 7px;
+    margin: 5px;
+    margin-left: 15px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 16px;
+    color: #000000;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+
+#modal, #modal_join, #modalSuccess, #modalError {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}
+
+
+#modal_join h3, #modal h3, #modalSuccess h3, #modalError h3 {
+    margin-bottom: 10px;
+}
+#modalSuccess div, #modalError div {
+    text-align: center;
+    width: 15%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 5px;
+    color: rgb(0, 0, 0);
+    display: flex;
+    flex-direction: column;
+
+}
+
+#modal form, #modal_join form  {
+    text-align: center;
+    width: 15%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 5px;
+    color: rgb(0, 0, 0);
+    display: flex;
+    flex-direction: column;
+}
+
+.form-buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+#modal button, #modal_join button, #modalSuccess button, #modalError button {
+    padding: 5px 10px;
+    background-color: #e7dddd;
+    color: #000000;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    
+}
+
+#modal button:hover, #modal_join button:hover, #modalSuccess button:hover, #modalError button:hover {
+    background-color: #deab3c74;
+}
+
+#modal-btns {
+    display:flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    
+}
+
+
+#thisShoppingList {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+  }
+
+#thisShoppingList form {
+    text-align: center;
+    width: 40%;
+    height: 80%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #ffffff;
+    border-radius: 5px;
+    color: rgb(0, 0, 0);
+    display: flex;
+    flex-direction: column;
+}
+
+#modalURL, .modalAddItem {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+  }
+
+  #copy-url-form {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    max-width: 400px;
+    width: 100%;
+  }
+
+  #url-input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+
+  label {
+    display: block;
+    font-weight: bold;
+  }
+
+  #copy-button {
+    background-color: #4caf50;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+
+  #closed-button {
+    padding: 2px;
+    cursor: pointer;
+    color: #333;
+  }
+
+  #modalDel {
+    display: none;
+  position: fixed;
+    top: 50%;
+    left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  border: 1px solid #ccc;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  }
+#modalDel div {
+    margin-top: 15%;
+    background-color: white;
+    height: 30%;
+    width: 35%;
+    align-content: center;
+    justify-content: center;
+    display: inline-grid;
+    border-radius: 5px;
+}
+
+  #modalDel button {
+        margin: 10px;
+        padding: 10px 20px;
+        cursor: pointer;
+        border: none;
+        border-radius: 4px;
+        background-color: #4caf50;
+        color: white;
+        font-size: 16px;
+  }
