@@ -17,13 +17,18 @@ This repository contains all the exercises and assessments of the UC Sistemas Di
 
 Notes that I take during theoretical lectures in Markdown. <br>
 
-### Project (Grade: __/20)
+### Project BuyBuddy (Grade: __/20)
 
+- `Local-First Design`: prioritizes a local-first approach, running code on user devices for data persistence. This ensures offline functionality, enhancing user experience by allowing them to access and modify their shopping lists without an internet connection.
 
+- `Collaborative Lists`: each shopping list has a unique ID, facilitating collaboration. Users with the list ID can seamlessly collaborate, enabling them to collectively manage and update shopping lists.
 
 #### Members
 
-
+- André Costa, up201905916@up.pt
+- Bárbara Carvalho, up202004695@up.pt
+- Fábio Sá, up202007658@up.pt
+- Luís Cabral, up202006464@up.pt
 
 **@ Fábio Araújo de Sá** <br>
 **2023/2024**
