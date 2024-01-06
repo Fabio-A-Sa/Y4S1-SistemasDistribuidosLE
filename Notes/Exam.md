@@ -8,7 +8,7 @@
 - [Byzantine Fault Tolerance](#byzantine-fault-tolerance) 
 - [CRDTs](#crdts)
 - [Scalable Distributed Topologies](#scalable-distributed-topologies)
-- []()
+- [Physical and Logical Time](#physical-and-logical-time)
 
 ## Message Oriented Midleware (MOM)
 
@@ -53,3 +53,8 @@
 - P2P Gnuttela usa super-peers para minimizar impactos do PingPong;
 - DHT Chord, cada nó tem um ID, localização rápida do sucessor;
 - DHT Kademlia, roteamento simétrico, nós que partilham prefixos otimizam latência, a distância de identificação é feita com XOR operations;
+
+## Physical and Logical Time
+
+- Berkeley Algorithm, o local clock é atualizado com metade do round-trip-time;
+- 
