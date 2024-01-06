@@ -57,4 +57,5 @@
 ## Physical and Logical Time
 
 - Berkeley Algorithm, o local clock é atualizado com metade do round-trip-time;
-- 
+- Vector clocks com melhoramentos: scalling at the edge usando DVV (Dotted version vectors) e Dynamic concurrency Degree, usando ITC (Interval Tree Clocks), que evita entidades pré-configuradas. O id-space pode ser partido e juntado para configurar eventos, cada entidade tem uma porção única do id para si e cada evento deve usar parte dessa porção exclusiva;
+

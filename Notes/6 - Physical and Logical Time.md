@@ -11,4 +11,11 @@ No entanto, por motivos de causalidade, ainda não é suficiente. Se dois nós n
 
 ## Vector Clocks
 
-São atribuídos IDs a cada evento em cada nó. Cada nó tem um conjunto de **Causal Histories**, 
+São atribuídos IDs a cada evento em cada nó. Cada nó tem um conjunto de **Causal Histories**. As mensagens são passadas através da união de conjuntos desses IDs.
+
+> Node b, with [0, 1, 0] is receiving a message with [2, 0, 0] <br>
+> We need to combine the two vectors and update b entry <br>
+> Union([2, 0, 0],[0, 1, 0]) =  [2, 2, 2] <br>
+
+- `Scaling` at the edge: usando Dotted Version Vectors (DVV);
+- `Dynamic` concurrency degree: usando Interval Tree Clocks (ITC). Evita entidades pré-configuradas, o espaço (id-space) pode ser partido e juntado. No entanto cada entidade tem uma porção única e cada evento deve usar pelo menos parte dessa porção exclusiva;
