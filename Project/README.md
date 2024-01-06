@@ -1,4 +1,4 @@
-# SDLE Project
+# SDLE Project - BuyBuddy (Grade: 18.5/20)
 
 ## Documentation
 
