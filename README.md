@@ -17,7 +17,7 @@ This repository contains all the exercises and assessments of the UC Sistemas Di
 
 Notes that I take during theoretical lectures in Markdown. <br>
 
-### Project BuyBuddy (Grade: __/20)
+### Project BuyBuddy (Grade: 18.5/20)
 
 - `Local-First Design`: prioritizes a local-first approach, running code on user devices for data persistence. This ensures offline functionality, enhancing user experience by allowing them to access and modify their shopping lists without an internet connection.
 
