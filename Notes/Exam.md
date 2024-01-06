@@ -37,7 +37,7 @@
 ## Byzantine Fault Tolerance
 
 - Tolera F falhas se o sistema tiver N réplicas (N = 3F + 1);
-**Dificuldade**: estes slides
+**Dificuldade**: todos estes slides
 
 ## CRDTs
 
@@ -46,3 +46,8 @@
 - State-based for high Availability
 
 ## Scalable Distributed Topologies
+
+- Conexões podem ser geradas por: random geometric, random Erdos-Renyi (probabilidade p), Watts-Strogatz (small worlds), Barabasi-Albert (maior conexão do nó - maior probabilidade de adicionar uma nova conexão);
+- AsyncSpanningTrees e SyncBFS;
+- Watts Strogatz: cria K contactos locais e alguns outros de longo alcance com o algoritmo ER. Carece de localidade;
+
