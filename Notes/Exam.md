@@ -4,11 +4,7 @@
 
 - [Message Oriented Midleware](#message-oriented-midleware-mom);
 - [Replication and Consistency Models](#replication-and-consistency-models) 
-- 
-- 
-- 
-- 
-- 
+- [Quorum Consensus](#quorum-consensus)
 
 ## Message Oriented Midleware (MOM)
 
@@ -26,3 +22,7 @@
 - Strong Consistency Models: sequential (operações por ordem, sistema multithread num single processor, não são composable), linear (é sequencial com sincronização, garante ordem temporal das operações, são operações concorrentes se houver um overlap nos tempos de execução, é composable), serial (sequential model for transaction-based systems);
 - Weak Consistency Models, por motivos de performance e availability;
 
+## Quorum Consensus
+
+- Read depende de Write, logo R + W > N, mas Write depende de Write, logo W + W > N. Gifford. Pode haver erros mesmo assim porque o nó de overlap pode falhar / não ficar atualizado / ter problemas de concorrência em writes. Usam-se transactions que abortam caso não recebam um ACK de um Write, garantem isolation, mas podem ter deadlocks (se usar locks) e blocking (se usar two-phase commit) caso o coordenador falhe;
+- 
