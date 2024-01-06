@@ -38,3 +38,22 @@ Tem menor complexidade de mensagens, mas é frágil na presença de falhas.
 - Resulta num pequeno diâmetro e grande clustering;
 - Não é suficientemente bom a encontrar caminhos entre quaisquer dois nós, carece de localidade e forte ligação entre nós;
 
+## System Design for Large Scale
+
+De acordo com a Law of Diminishing Returns, num sistema em produção com variáveis de input fixas, a partir de certo ponto a adição de novos recursos vai aumentar o output gradativamente menos.
+
+### P2P Gnuttela
+
+Usa super-peers como intermediários para minimizar os impactos de PingPong na eficiência de comunicação e distribuição de mensagens.
+
+### Distributed Hash Tables
+
+Mapeiam chaves para nós na rede, permitindo uma busca mais direcionada, embore necessite de mais manutenção. Existem duas abordagens conhecidas:
+
+#### Chord
+
+Círculo ordenado de nós, onde cada um tem um ID atribuído probabilisticamente, para localizar de forma eficiente o sucessor de um determinado ID da rede. Eficiente em operações de busca e recuperação.
+
+#### Kademlia
+
+Ao contrário do Chord, esta tem roteamento simétrico, e a distância de identificação é dada por um XOR. Cada nó armazena até K outros nós. Os nós que partilham prefixos são escolhidos como saltos alternativos para otimizar latência.
