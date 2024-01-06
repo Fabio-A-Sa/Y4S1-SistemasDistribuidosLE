@@ -24,5 +24,8 @@
 
 ## Quorum Consensus
 
-- Read depende de Write, logo R + W > N, mas Write depende de Write, logo W + W > N. Gifford. Pode haver erros mesmo assim porque o nó de overlap pode falhar / não ficar atualizado / ter problemas de concorrência em writes. Usam-se transactions que abortam caso não recebam um ACK de um Write, garantem isolation, mas podem ter deadlocks (se usar locks) e blocking (se usar two-phase commit) caso o coordenador falhe;
-- 
+- Read depende de Write, logo R + W > N, mas Write depende de Write, logo W + W > N. Pode haver erros mesmo assim porque o nó de overlap pode falhar / não ficar atualizado / ter problemas de concorrência em writes. Usam-se transactions que abortam caso não recebam um ACK de um Write, garantem isolation, mas podem ter deadlocks (se usar locks) e blocking (se usar two-phase commit) caso o coordenador falhe;
+- Operation Quorum de Gifford: lê de um quorum inicial e escreve para um quorum final. Quorum Final de write tem de estar ligado a: quorum inicial de escrita e quorum inicial de leitura;
+- Herlihy’s Replication Method: timestamps, logs [t:(operação, results)], linearizability.
+- **Dificuldade**: como saber o Minimal quorum?
+

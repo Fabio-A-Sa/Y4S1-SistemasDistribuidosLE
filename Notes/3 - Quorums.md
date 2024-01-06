@@ -35,3 +35,11 @@ Um ficheiro sujeito a operações read/write com as seguintes restrições:
 
 - Cada quorum final de escrita precisa interceptar cada quorum inicial de leitura
 - Cada quorum final de escrita precisa interpeptar cada quorim inicial de escrita
+
+Isto garante que as versões do objecto são adequadamente atualizadas.
+
+### Herlihy’s Replication Method
+
+Usa timestamps em vez de versões, para reduzir mensagens e reduzir as restrições de interseção entre quoruns. Usa logs em vez de state versions. Assume que as operações vêm sempre com uma ordem representada por timestamps, ou seja, modelo consistente de linearizability. Não precisa de ler a versão do objecto do quorum inicial, porque o timestamp é suficiente para mostrar qual a versão mais atual, logo só precisa de escrever o novo estado no quorum final.
+Os logs são representados por pares (operação, resultado) e indexados por timestamp.
+
