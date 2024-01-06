@@ -74,3 +74,7 @@ Os acceptors devem ainda enviar aos learners (ou a um master-learner) o valor ac
 - Os servers determinam um líder, 
 - TODO
 
+### Byzantine Fault Tolerance
+
+Sistema distribuído e assíncrono, onde os nós falham arbitrariamente e têm comportamentos não previstos nem determinísticos. Tolera-se a falha de F réplicas se houverem N = 3F + 1 réplicas ao todo.
+

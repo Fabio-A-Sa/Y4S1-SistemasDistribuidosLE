@@ -5,6 +5,8 @@
 - [Message Oriented Midleware](#message-oriented-midleware-mom);
 - [Replication and Consistency Models](#replication-and-consistency-models) 
 - [Quorum Consensus](#quorum-consensus)
+- [Byzantine Fault Tolerance](#byzantine-fault-tolerance) 
+- [CRDTs](#crdts)
 
 ## Message Oriented Midleware (MOM)
 
@@ -29,4 +31,11 @@
 - Herlihy’s Replication Method: timestamps, logs [t:(operação, results)], linearizability.
 - **Dificuldade**: como saber o Minimal quorum?
 - **Dificuldade**: Synod Algorithm, Paxos, SMR 
+
+## Byzantine Fault Tolerance
+
+- Tolera F falhas se o sistema tiver N réplicas (N = 3F + 1);
+**Dificuldade**: estes slides
+
+## CRDTs
 
