@@ -39,3 +39,6 @@
 
 ## CRDTs
 
+- Eventual Consistency;
+- Consistency-Availability-Partition Tolerance (CAP), só é possível fixar duas destas três propriedades;
+- 

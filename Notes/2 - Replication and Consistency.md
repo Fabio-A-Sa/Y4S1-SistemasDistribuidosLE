@@ -21,10 +21,3 @@ Para sistemas baseados em transações. Uma execução é one-copy serializable 
 ## Weak Consistency
 
 Os sistemas de consistência forte acabam por ser mais favoráveis em casos de réplicas, mas têm um impacto na escalabilidade, na performance e na disponibilidade. Num sistema comum, uma consistência fraca é suficiente.
-
-## Conflict-Free Replicated Data Types (CRDT)
-
-Baseia-se em dois pilares:
-
-- `EC`, Eventual Consistency: é um caso especial de consistência fraca. Depois de um update, se novos updates não forem feitos, eventualmente todos os nós irão concordar no valor final;
-- `CAP`, Consistency-Availability-Partition Tolerance, apenas é possível atingir e fixar dois destes três parâmetros em qualquer sistema;
