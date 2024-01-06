@@ -9,4 +9,3 @@ Os CRDTs favorecem AP em vez de Consistência, usando apenas consistência event
 
 - As operações devem ser comutativas;
 - Os estados devem permitir operações determinísticas e indepotentes;
-

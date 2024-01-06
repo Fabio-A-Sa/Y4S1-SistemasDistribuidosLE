@@ -7,6 +7,8 @@
 - [Quorum Consensus](#quorum-consensus)
 - [Byzantine Fault Tolerance](#byzantine-fault-tolerance) 
 - [CRDTs](#crdts)
+- [Scalable Distributed Topologies](#scalable-distributed-topologies)
+- []()
 
 ## Message Oriented Midleware (MOM)
 
@@ -41,4 +43,6 @@
 
 - Eventual Consistency;
 - Consistency-Availability-Partition Tolerance (CAP), só é possível fixar duas destas três propriedades;
-- 
+- State-based for high Availability
+
+## Scalable Distributed Topologies
