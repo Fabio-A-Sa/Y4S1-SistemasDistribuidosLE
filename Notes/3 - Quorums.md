@@ -43,3 +43,34 @@ Isto garante que as versões do objecto são adequadamente atualizadas.
 Usa timestamps em vez de versões, para reduzir mensagens e reduzir as restrições de interseção entre quoruns. Usa logs em vez de state versions. Assume que as operações vêm sempre com uma ordem representada por timestamps, ou seja, modelo consistente de linearizability. Não precisa de ler a versão do objecto do quorum inicial, porque o timestamp é suficiente para mostrar qual a versão mais atual, logo só precisa de escrever o novo estado no quorum final.
 Os logs são representados por pares (operação, resultado) e indexados por timestamp.
 
+### Consensus
+
+Multiplos processos acordam num novo valor V. Para isso usam o `Synod Algorithm` assumindo que:
+- Cada processo é assíncrono, pode falhar e reviver, tem acesso a um stable storage;
+- As mensagens têm delay, podem ser perdidas ou duplicadas, mas não são corrompidas;
+- Não há uma solução perfeita para sistemas assíncronos, se um valor foi escolhido eventualmente vai ser propagado para todo o sistema;
+- Existem proposers, acceptors e learners e duas fases;
+
+`Phase 1`:
+
+- O proposer escolhe N e envia PREPARE(N) para a maioria dos acceptors;
+- O acceptor quando receber um PREPARE(N), se N for maior que o número de um anterior PREPARE, então:
+    - Responde com uma promise de não aceitar propostas futuras de números inferiores a N;
+    - Responde com a proposta de número mais alto (se houver alguma) que tenha aceitado;
+
+`Phase 2`:
+
+- O proposer receber a resposta ao seu PREPARE(N) de uma maioria de aceitadores, então envia uma solicitação ACCEPT(N, V) para cada um desses aceitadores. V é:
+    - o valor recebido da resposta do PREPARE(N), se houve resposta;
+    - o valor gerado pelo proposer;
+- O acceptor aceita o ACCEPT(N, V) a menos que já tenha aceite um PREPARE com valor superior a N;
+
+Os acceptors devem ainda enviar aos learners (ou a um master-learner) o valor acordado. O master-learner deve ser acordado com um algoritmo de eleição;
+
+`Paxos` é a implementação do Synods algorithm na prática. 
+
+### State Machine Replication with Paxos
+
+- Os servers determinam um líder, 
+- TODO
+

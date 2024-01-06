@@ -28,4 +28,5 @@
 - Operation Quorum de Gifford: lê de um quorum inicial e escreve para um quorum final. Quorum Final de write tem de estar ligado a: quorum inicial de escrita e quorum inicial de leitura;
 - Herlihy’s Replication Method: timestamps, logs [t:(operação, results)], linearizability.
 - **Dificuldade**: como saber o Minimal quorum?
+- **Dificuldade**: Synod Algorithm, Paxos, SMR 
 
