@@ -3,7 +3,7 @@
 ## Topics
 
 - [Message Oriented Midleware](#message-oriented-midleware-mom);
-- 
+- [Replication and Consistency Models](#replication-and-consistency-models) 
 - 
 - 
 - 
@@ -20,4 +20,9 @@
 - JMS Persistent: once-and-only-once, store da mensagem nalgo não volátil. Pode ser implementado por sessões e com AUTO_ACKNOWLEDGE, DUPS_OK_ACKNOWLEDGE, CLIENT_ACKNOWLEDGE, SESSION_TRANSATED;
 - JMS Non-Persistent: at-most-once;
 - JMS Topics Subscription: unshared (only one consumer at a time), shared, non-durable (enquanto existir um consumer ativo), durable (existe até ser explicitamente eliminada);
+
+## Replication and Consistency Models
+
+- Strong Consistency Models: sequential (operações por ordem, sistema multithread num single processor, não são composable), linear (é sequencial com sincronização, garante ordem temporal das operações, são operações concorrentes se houver um overlap nos tempos de execução, é composable), serial (sequential model for transaction-based systems);
+- Weak Consistency Models, por motivos de performance e availability;
 

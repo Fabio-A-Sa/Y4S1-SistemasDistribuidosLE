@@ -22,7 +22,7 @@ Para sistemas baseados em transações. Uma execução é one-copy serializable 
 
 Os sistemas de consistência forte acabam por ser mais favoráveis em casos de réplicas, mas têm um impacto na escalabilidade, na performance e na disponibilidade. Num sistema comum, uma consistência fraca é suficiente.
 
-## Conflitc-Free Replicated Data Types (CRDT)
+## Conflict-Free Replicated Data Types (CRDT)
 
 Baseia-se em dois pilares:
 
