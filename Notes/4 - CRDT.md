@@ -1,4 +1,4 @@
-## Conflict-Free Replicated Data Types (CRDT)
+# Conflict-Free Replicated Data Types (CRDT)
 
 Baseia-se em dois pilares:
 
