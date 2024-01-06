@@ -12,9 +12,11 @@ O que `TCP` garante é que a aplicação será notificada se não existir forma 
 
 TCP nem sempre retransmite mensagens que podem não ter sido entregues porque assim garante segurança nas operações **indepotentes** (como operação de débito ou compra). Operações indepotentes são aquelas que não alteram o estado normal do servidor quando são repetidas várias vezes (como uma operação de GET de uma página web).
 
-### RCP
+### RPC
 
 Remote Procedure Call serve para termos uma interface com servidores remotos:
 
 - `Client Stub`: faz um *parameter marshalling* e bloqueia pela resposta se o RPC não for assíncrono. Depois faz *unmarshalling* da resposta;
 - `Server Stub`: determina os argumentos recebidos (*unmarshalling*) e chama a sua função interna. Depois envia o retorno pelo mesmo canal de comunicação;
+
+Sendo assícronos, os RPCs retornam a call diretamente e depois de terem resultados interrompem o client para mostrá-los. RPCs sícronos são mais simples, mas não lidam bem com falhas ou quando os dois endpoints não estão simultaneamente disponíveis.
