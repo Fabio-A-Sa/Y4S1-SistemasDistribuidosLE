@@ -9,6 +9,7 @@
 - [CRDTs](#crdts)
 - [Scalable Distributed Topologies](#scalable-distributed-topologies)
 - [Physical and Logical Time](#physical-and-logical-time)
+- [Blockchain](#blockchain)
 
 ## Message Oriented Midleware (MOM)
 
@@ -56,6 +57,11 @@
 
 ## Physical and Logical Time
 
+- Lamport Clocks, o seu incremento não é um evento e o seu valor é o incremento (quando não recebe mensagens) ou o max(futuro valor com incremento, timestamp da mensagem recebida) + 1, quando recebe mensagens;
+- A principal limitação do Lamport Clock é que nem sempre L(e1) < L(e2) -> (e1 -> e2);
 - Berkeley Algorithm, o local clock é atualizado com metade do round-trip-time;
 - Vector clocks com melhoramentos: scalling at the edge usando DVV (Dotted version vectors) e Dynamic concurrency Degree, usando ITC (Interval Tree Clocks), que evita entidades pré-configuradas. O id-space pode ser partido e juntado para configurar eventos, cada entidade tem uma porção única do id para si e cada evento deve usar parte dessa porção exclusiva;
+- Version Vector Clocks são Vector Clocks que só têm incremento quando há atualização do objecto que manipulam;
+
+## Blockchain
 
