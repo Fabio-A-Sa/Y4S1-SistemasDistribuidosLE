@@ -50,7 +50,7 @@
 
 - Conexões podem ser geradas por: random geometric, random Erdos-Renyi (probabilidade p), Watts-Strogatz (small worlds), Barabasi-Albert (maior conexão do nó - maior probabilidade de adicionar uma nova conexão);
 - AsyncSpanningTrees e SyncBFS;
-- Watts Strogatz: cria K contactos locais e alguns outros de longo alcance com o algoritmo ER. Carece de localidade;
+- Watts Strogatz: cria K contactos locais e alguns outros de longo alcance com o algoritmo ER. Carece de localidade, mas tem pequeno diâmetro e grande clustering;
 - P2P Gnuttela usa super-peers para minimizar impactos do PingPong;
 - DHT Chord, cada nó tem um ID, localização rápida do sucessor;
 - DHT Kademlia, roteamento simétrico, nós que partilham prefixos otimizam latência, a distância de identificação é feita com XOR operations;
