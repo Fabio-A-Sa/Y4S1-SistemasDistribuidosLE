@@ -8,7 +8,7 @@ A bitcoin é um record de transactions que ocorrem numa P2P network com nodes co
 
 ## Blockchain
 
-A blockchain é uma corrente de blocos, cada um com até no máximo 1MB, que guardam transações de criptomoedas. O primeiro bloco é o `genesis` e o último é o `head`. Cada bloco tem um head que aponta para o bloco imediatamente anterior, sendo ligados porque o hash depende também da identificação do bloco anterior.
+A blockchain é uma corrente de blocos, cada um com até no máximo 1MB, que guardam transações de criptomoedas. O primeiro bloco é o `genesis` e o último é o `head`. Cada bloco tem um head que aponta para o bloco imediatamente anterior, sendo ligados porque o hash depende também da identificação do bloco anterior e dos hashes das transactions que suporta.
 
 Bitcoin é um exemplo de blockchain permissiva.
 
@@ -40,4 +40,4 @@ Não há 100% de garantias que um bloco esteja presente no final, mas com 6 conf
 - Termermint não usa views, como o PBFT;
 - PBFT uses point-to-point communication, Tendermint uses "reliable broadcast";
 - Voting PBFT uses one node-one vote, whereas Tendermint uses weighted voting;
-- The leader in PBFT changes with the view in a round-robin fashion, whereas in Tendermint the proposer  changes in every round and the higher a validator’s stake, the more rounds it will play the role of proposer;
+- The leader in PBFT changes with the view in a round-robin fashion, whereas in Tendermint the proposer changes in every round and the higher a validator’s stake, the more rounds it will play the role of proposer;

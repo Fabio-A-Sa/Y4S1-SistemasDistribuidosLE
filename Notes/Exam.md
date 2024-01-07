@@ -65,5 +65,7 @@
 
 ## Blockchain
 
-TODO today
-
+- Blockchain baseada em ProofOfWork de Nakamoto: nonce no header do bloco até atingir um target;
+- Broadcasting with anti-entropy: inventory, getdata. Delay is the bottleneck;
+- Bitcoin forks, o block escolhe a chain maior depois de aprender com ela, podem ser itencionais, pioram roundtrip de mensagens, eventual consistency;
+- Tendermint vs PBFT: não views, views, reliable broadcast, point-to-point, weighted voting, node-one vote, proposer changes every round and higher validator stake -> more rounds of proposer role, changes the view in a round;
