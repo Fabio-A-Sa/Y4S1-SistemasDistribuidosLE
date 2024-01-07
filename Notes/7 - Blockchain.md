@@ -1,6 +1,6 @@
 # Blockchain
 
-Como fazer pagamentos diretos online sem passar por 2rd party systems?
+Como fazer pagamentos diretos online sem passar por 3rd party systems?
 
 ## Bitcoin
 
