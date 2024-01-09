@@ -32,8 +32,9 @@
 - Read depende de Write, logo R + W > N, mas Write depende de Write, logo W + W > N. Pode haver erros mesmo assim porque o nó de overlap pode falhar / não ficar atualizado / ter problemas de concorrência em writes. Usam-se transactions que abortam caso não recebam um ACK de um Write, garantem isolation, mas podem ter deadlocks (se usar locks) e blocking (se usar two-phase commit) caso o coordenador falhe;
 - Operation Quorum de Gifford: lê de um quorum inicial e escreve para um quorum final. Quorum Final de write tem de estar ligado a: quorum inicial de escrita e quorum inicial de leitura;
 - Herlihy’s Replication Method: timestamps, logs [t:(operação, results)], linearizability.
-- **Dificuldade**: como saber o Minimal quorum?
-- **Dificuldade**: Synod Algorithm, Paxos, SMR 
+- Paxos Phase 1: PREPARE(N), se N for maior que um anterior PREP recebido, então responde com Promise e com o valor V de número mais alto que alguma vez já aceitou;
+- Paxos Phase 2: se receber resposta da maioria, envia ACCEPT(n, v) com V igual ao seu ou o valor da proposta de maior número recebidas na fase 1. O aceitador aceita unless já tiver respondido a um PREPARE com N maior. Depois de aceitar, envia o valor para os Learners;
+- SMR: determinação de um lider que roda a Paxos Phase 1 para haver progresso. Depois se alguém não tiver conhecimento do número na fase 2, o líder pode rodar NO-OP para essas instâncias. A falha do lider é rara (Paxos almost optimal), e o custo é praticamente o custo da fase 2;
 
 ## Byzantine Fault Tolerance
 

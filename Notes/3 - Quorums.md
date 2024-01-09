@@ -71,8 +71,10 @@ Os acceptors devem ainda enviar aos learners (ou a um master-learner) o valor ac
 
 ### State Machine Replication with Paxos
 
-- Os servers determinam um líder, 
-- TODO
+- Os servers determinam um líder;
+- Esse líder executa o Paxos Phase 1 para todas as instâncias;
+- Se alguém ficar pendurado na fase 2 (nenhum valor foi aceite antes), o novo lider pode propor NO-OP para as instancias inválidas;
+- Como a falhar de um líder é um evento raro, o Paxos é almost optimal e o custo é quase o custo da fase 2;
 
 ### Byzantine Fault Tolerance
 
