@@ -39,7 +39,8 @@
 ## Byzantine Fault Tolerance
 
 - Tolera F falhas se o sistema tiver N réplicas (N = 3F + 1);
-**Dificuldade**: todos estes slides
+- Detectam mensagens corrompidas através de criptografia e usam views, que são uma configuração do sistema numerado. Existe um timestamp nas mensagens trocadas para garantir uma semântica exactly once e o client espera por F + 1 replies com assinaturas válidas;
+- Admite-se que quaisquer dois quoruns têm uma réplica em comum e há pelo menos um quorum sem réplicas a falhar;
 
 ## CRDTs
 

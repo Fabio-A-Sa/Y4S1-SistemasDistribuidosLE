@@ -80,3 +80,22 @@ Os acceptors devem ainda enviar aos learners (ou a um master-learner) o valor ac
 
 Sistema distribuído e assíncrono, onde os nós falham arbitrariamente e têm comportamentos não previstos nem determinísticos. Tolera-se a falha de F réplicas se houverem N = 3F + 1 réplicas ao todo.
 
+Os processos usam criptografia para detectar mensagens corrompidas.
+
+#### Views
+
+São uma configuração do sistema numerada, em que cada configuração tem o seu lider. O lider pode ser bizantino. O líder, p = v mod N, com
+
+> V - view number <br>
+> N >= 3F + 1 - número de réplicas <br>
+
+As requests dos clientes possuem um timestamp para garantir uma semântica `exactly once`. O client espera por F + 1 replies (elas têm a indicação de quem é o líder) com assinaturas válidas. 
+
+#### Quoruns
+
+Usam-se quoruns e quaisquer dois quoruns têm uma réplica em comum. Assume-se que há pelo menos um quorum sem réplicas a falhar.
+
+#### Phases
+
+- Pre-prepare: o líder envia uma pre-prepare message asinada e depois cada nó, se for válida, aceita;
+- Prepare: depois de aceitar, a réplica multicast message para todas as outras, incluíndo a lider. Elas devem aceitar;
