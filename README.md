@@ -2,7 +2,7 @@
 
 This repository contains all the exercises and assessments of the UC Sistemas Distribuídos em Larga Escala, taught by [Pedro Souto](https://sigarra.up.pt/feup/pt/func_geral.formview?p_codigo=238172) and [Carlos Baquero-Moreno](https://sigarra.up.pt/feup/pt/func_geral.formview?p_codigo=666857) at [Master in Informatics and Computing Engineering](https://sigarra.up.pt/feup/pt/cur_geral.cur_view?pv_curso_id=742) [MEIC] at the [Faculty of Engineering of the University of Porto](https://sigarra.up.pt/feup/pt/web_page.Inicial) [FEUP]. <br> <br>
 
-<h2 align = "center" >Final Grade: __/20</h2>
+<h2 align = "center" >Final Grade: 17/20</h2>
 <p align = "center" >
   <img 
        title = "FEUP logo"
@@ -18,6 +18,8 @@ This repository contains all the exercises and assessments of the UC Sistemas Di
 Notes that I take during theoretical lectures in Markdown. <br>
 
 ### Project BuyBuddy (Grade: 18.5/20)
+
+![BB Logo](./Project/src/text_logo.png)
 
 - `Local-First Design`: prioritizes a local-first approach, running code on user devices for data persistence. This ensures offline functionality, enhancing user experience by allowing them to access and modify their shopping lists without an internet connection.
 

@@ -1,5 +1,7 @@
 # SDLE Project - BuyBuddy (Grade: 18.5/20)
 
+![BB Logo](./src/text_logo.png)
+
 ## Documentation
 
 - [Architecture](./docs/Architecture.pdf)
